@@ -23,6 +23,12 @@ final class Tool
      */
     public static function getLanguageFlagFile(string $language, bool $absolutePath = true): string
     {
+        // start custom code
+        if ($language === 'en') {
+            return $absolutePath ? PIMCORE_WEB_ROOT . '/bundles/pimcoreadmin/img/twemoji/1f30d.svg' : '/bundles/pimcoreadmin/img/twemoji/1f30d.svg';
+        }
+        // end custom code
+        
         $basePath = '/bundles/pimcoreadmin/img/flags';
         $iconFsBasePath = PIMCORE_WEB_ROOT . $basePath;
 
